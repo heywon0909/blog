@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -39,4 +43,19 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 3px;
 }
