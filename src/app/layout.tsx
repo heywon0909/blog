@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Roboto_Slab } from 'next/font/google';
+import { Noto_Sans } from 'next/font/google';
 import './globals.css';
-import Link from 'next/link';
+
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const notoSans = Noto_Sans({
   weight: '400',
 });
 
-const roboto = Roboto_Slab({
-  weight: '400',
-});
+// const roboto = Roboto_Slab({
+//   weight: '400',
+// });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,28 +23,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const menuList = [
-    { text: 'home', route: '/' },
-    { text: 'posts', route: '/posts' },
-    { text: 'contact', route: '/contact' },
-  ];
-
   return (
     <html lang="en">
-      <body className={`${notoSans.className}`}>
-        <div id="header" className="p-3 flex justify-between">
-          <Link href={'/'}>
-            <h1 className={`${roboto.className} font-semibold text-xl`}>HEYWON0909</h1>
-          </Link>
-          <nav className="flex gap-4">
-            {menuList.map(({ text, route }, index) => (
-              <Link href={route} key={index}>
-                {text}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="flex justify-center items-center">{children}</div>
+      <body className={`${notoSans.className} flex flex-col w-full mx-auto`}>
+        <Header />
+        <main className="grow mx-auto">{children}</main>
+        <Footer />
       </body>
     </html>
   );

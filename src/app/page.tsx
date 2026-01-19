@@ -5,13 +5,11 @@ import PostCard from '../components/PostCard';
 export default async function Home() {
   const posts: Post[] = await getPosts();
 
-  console.log('posts', posts);
-
   const featuredPosts = posts.filter(post => post.featured);
   const recommendedPosts = posts.filter(post => !post.featured);
 
   return (
-    <div className="w-3/5">
+    <section>
       <div className="p-2">
         <h2 className="text-bold font-bold text-left text-lg">Featured Posts</h2>
         <div className="p-2 grid grid-cols-3 gap-3">
@@ -27,6 +25,6 @@ export default async function Home() {
           </CarouselSlider>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
