@@ -3,7 +3,6 @@ import { Noto_Sans } from 'next/font/google';
 import './globals.css';
 
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 const notoSans = Noto_Sans({
   weight: '400',
@@ -25,10 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.className} flex flex-col w-full mx-auto`}>
+      <body className={`${notoSans.className} flex flex-col mx-auto`}>
         <Header />
-        <main className="grow mx-auto">{children}</main>
-        <Footer />
+        <main className="grow lg:mx-auto lg:w-3/5">{children}</main>
       </body>
     </html>
   );

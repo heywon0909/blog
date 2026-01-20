@@ -1,11 +1,9 @@
-import PostSection from '@/components/PostSection';
+import FilterablePosts from '@/components/FilterablePosts';
 import { getPosts } from '@/service/posts';
 
 export default async function PostPage() {
   const posts = await getPosts();
-  const categoryList = new Set<string>();
-  categoryList.add('all');
-  posts.map(v => categoryList.add(v.category));
+  const categories = [...new Set(posts.map(post => post.category))];
 
-  return <PostSection posts={posts} categoryList={Array.from(categoryList.values())} />;
+  return <FilterablePosts posts={posts} categories={categories} />;
 }

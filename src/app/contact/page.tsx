@@ -2,9 +2,9 @@ import { OpinionForm } from '@/components/OpinionForm';
 
 export default function Page() {
   return (
-    <div className="w-full md:w-1/3">
+    <section className="md:w-[500px] w-full">
       <h2 className="text-xl font-semibold">Contact me</h2>
       <OpinionForm />
-    </div>
+    </section>
   );
 }
