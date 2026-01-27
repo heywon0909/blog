@@ -30,20 +30,18 @@ export function OpinionForm() {
 
   return (
     <Form action={formAction} className="border  border-slate-400 flex flex-col gap-2 p-2 rounded-md w-full">
-      {/* On submission, the input value will be appended to
-          the URL, e.g. /search?query=abc */}
       <label htmlFor="email" className="font-bold text-gray-600">
         Your Email
       </label>
-      <input name="email" id="email" type="text" className="border rounded-md" />
+      <input name="email" id="email" type="email" className="border rounded-md" required autoFocus />
       <label htmlFor="subject" className="font-bold text-gray-600">
         Subject
       </label>
-      <input name="subject" id="subject" type="text" className="border rounded-md" />
+      <input name="subject" id="subject" type="text" className="border rounded-md" required />
       <label htmlFor="message" className="font-bold text-gray-600">
         message
       </label>
-      <textarea name="message" id="message" className="border rounded-md"></textarea>
+      <textarea rows={10} name="message" id="message" className="border rounded-md" required></textarea>
       <button type="submit" className="bg-indigo-500 text-white rounded-md p-2">
         Send Email
       </button>
