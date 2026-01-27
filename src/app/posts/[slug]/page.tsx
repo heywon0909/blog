@@ -21,17 +21,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = await getPostData(slug);
-  const { title, path, next, prev } = post;
+  const { next, prev } = post;
 
   return (
     <article className="rounded-2xl overflow-hidden bg-gray-100 shadow-lg m-4">
-      <Image
-        src={`/images/posts/${path}.png`}
+      {/* <Image
+        src={`/images/posts/project-bunney.png`}
         alt={title}
         width={750}
         height={420}
-        className="w-full h-1/5 max-h-[500px]"
-      />
+        className="w-full h-1/6 max-h-[400px]"
+      /> */}
       <PostContent post={post} />
       <section className="flex shadow-md">
         {prev && <AdjacentPostCard post={prev} type="prev" />}
